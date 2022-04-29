@@ -1,0 +1,53 @@
+
+
+tr, th, td {
+  border: 1px solid black;
+}
+
+th,td {
+  height: 40px;;
+}
+
+.header{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+
+  &__create-button{
+    color: red;
+  }
+  &__title{
+  }
+}
+
+.calendar{
+  border: 1px solid black;
+
+  &__table{
+    width: 100%;
+    table-layout: fixed;
+    border: 1px solid red;
+  }
+
+  &__header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
+.table{
+  &__row{
+    height: 100px;
+    &-title{
+      width: 20px;
+    }
+  }
+  &__day{
+    height: 50px;
+  }
+}
+
+.hide__element{
+  display: none;
+}
