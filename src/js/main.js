@@ -1,3 +1,17 @@
+const closeModalBtn = document.querySelector('#modal__close');
+const modal = document.querySelector('#modal');
+const saveModalBtn = document.querySelector('#modal__save');
+const header = document.querySelector('#header');
+const calendar = document.querySelector('#calendar');
+const modalCreateBtn = document.querySelector("#btn__create-event")
+const modalContent = document.querySelector("#modal__content")
+
+modalCreateBtn.addEventListener('click', () => {modal.classList.toggle("hide__element")})
+
+modal.addEventListener('click', (e) => {
+    if(e.target.id ==="modal" || e.target.id === "modal__close"){
+        modal.classList.toggle("hide__element")
+}})
 
 //get Data
 document.querySelector('form')
