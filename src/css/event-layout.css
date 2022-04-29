@@ -1,4 +1,4 @@
-.event {
+.modal {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -19,7 +19,7 @@
   background-color: #7a7676;
 }
 
-.event__content {
+.modal__content {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -33,7 +33,7 @@
   width: 90%;
 }
 
-.event__header {
+.modal__header {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -48,7 +48,7 @@
   width: 100%;
 }
 
-.event__form {
+.modal__form {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -60,7 +60,7 @@
   width: 80%;
 }
 
-.event__save {
+.modal__save {
   -ms-flex-item-align: center;
       -ms-grid-row-align: center;
       align-self: center;

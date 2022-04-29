@@ -6,14 +6,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script type="module" src="./src/js/main.js"></script>
+    <script type="module" src="./src/js/calendar.js"></script>
+    
     <link rel="stylesheet" href="./src/css/styles.css">
     <title>Calendar</title>
 </head>
 
 <body>
-    <header class="header hide__element">
-        <h1 class="header__title">Calendar</h1>
-        <button class="header__create-event">+ Create Event</button>
+    <header class="header">
+        <h1 id="h1" class="header__title">Calendar</h1>
+        <button  id="btn__create-event" type="button" class="header__create-event">+ Create event</button>
     </header>
     <main class="calendar hide__element">
         <header class="calendar__header ">
@@ -82,40 +84,40 @@
         
 
     </main>
-    <section class="event">
-        <article class="event__content">
-            <header class="event__header">
-                <h2 class="event__new">New Event</h2>
-                <button class="event__close">X</button>
+    <section id="modal" class="modal hide__element">
+        <article id="modal__content" class="modal__content">
+            <header class="modal__header">
+                <h2 class="modal__new">New event</h2>
+                <button class="modal__close">X</button>
             </header>
-            <form action="" class="event__form">
-                <label for="event__title">Title</label>
-                <input type="text" id="event__title" name="event__title">
-                <label for="event__initial-date">Initial Date</label>
-                <input type="date" id="event__initial-date" name="event__initial-date">
-                <label for="event__end-checkbox">End Date</label>
-                <input type="checkbox" id="event__end-checkbox" name="event__end-checkbox">
-                <label for="event__end-date">End Date</label>
-                <input type="date" id="event__end-date" name="event__end-date">
-                <label for="event__reminder-checkbox">Remind Me</label>
-                <input type="checkbox" id="event__reminder-checkbox" name="event__reminder-checkbox">
-                <label for="event__reminder-time">Reinder Time</label>
-                <select type="select" id="event__reminder-time" name="event__reminder-time">
+            <form action="" class="modal__form">
+                <label for="modal__title">Title</label>
+                <input type="text" id="modal__title" name="modal__title">
+                <label for="modal__initial-date">Initial Date</label>
+                <input type="date" id="modal__initial-date" name="modal__initial-date">
+                <label for="modal__end-checkbox">End Date</label>
+                <input type="checkbox" id="modal__end-checkbox" name="modal__end-checkbox">
+                <label for="modal__end-date">End Date</label>
+                <input type="date" id="modal__end-date" name="modal__end-date">
+                <label for="modal__reminder-checkbox">Remind Me</label>
+                <input type="checkbox" id="modal__reminder-checkbox" name="modal__reminder-checkbox">
+                <label for="modal__reminder-time">Reinder Time</label>
+                <select type="select" id="modal__reminder-time" name="modal__reminder-time">
                     <option value=""></option>
                     <option value=""></option>
                     <option value=""></option>
                     <option value=""></option>
                 </select>
-                <label for="event__description">Description</label>
-                <input type="text" id="event_description" name="event_description">
-                <label for="event__type">Event Type</label>
-                <select type="text" id="event_type" name="event_type">
+                <label for="modal__description">Description</label>
+                <input type="text" id="modal_description" name="modal_description">
+                <label for="modal__type">modal Type</label>
+                <select type="text" id="modal_type" name="modal_type">
                     <option value=""></option>
                     <option value=""></option>
                     <option value=""></option>
                     <option value=""></option>
                 </select>
-                <input type="submit" class="event__save">SAVE</input>
+                <submit class="modal__save">SAVE</submit>
             </form>
         </article>            
     </section>
