@@ -2,7 +2,12 @@
 
 /*RESET*/
 @import url('./reset.css');
-/*CALENDAR LAYOUT*/
-@import url('./calendar-layout.css');
 /* New Event LAYOUT */
 @import url('./event-layout.css');
+/*CALENDAR LAYOUT*/
+@import url('./calendar-layout.css');
+
+
+.hide__element{
+    display: none;
+}
