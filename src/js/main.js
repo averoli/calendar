@@ -6,7 +6,7 @@ document.querySelector('form')
         const data = Object.fromEntries(
             new FormData(e.target)
         )
-        const initialDate = data["event__initial-date"].split('-').map(a => parseFloat(a))
+        const initialDate = data["modal__initial-date"].split('-').map(a => parseInt(a))
         saveEventData(data, ...initialDate)
     })
 
@@ -29,4 +29,8 @@ function saveEventData(event, year, month, day){
         data[year][month][day].push(event)
     }
     localStorage.setItem("eventInfo", JSON.stringify(data))
+}
+
+function clearFormData(){
+    document.getElementById("modal__form").reset()
 }
