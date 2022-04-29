@@ -5,21 +5,21 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/6d9b3c0e02.js" crossorigin="anonymous"></script>
     <script type="module" src="./src/js/main.js"></script>
     <script type="module" src="./src/js/calendar.js"></script>
-    
     <link rel="stylesheet" href="./src/css/styles.css">
     <title>Calendar</title>
 </head>
 
 <body>
-    <header class="header">
+    <header id="header" class="header">
         <h1 id="h1" class="header__title">Calendar</h1>
-        <button  id="btn__create-event" type="button" class="header__create-event">+ Create event</button>
+        <button  id="btn__create-event" type="button" class="header__create-event"><i class="fa-solid fa-circle-plus"></i> Create event</button>
     </header>
-    <main class="calendar">
+    <main id="calendar" class="calendar">
         <header class="calendar__header ">
-            <button class="button__previous"><</button> 
+            <button class="button__previous"><</button>
             <h2 class="calendar__month">MONTH</h2>
             <button class="button__next">></button>
         </header>

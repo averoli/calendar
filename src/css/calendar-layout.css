@@ -23,6 +23,14 @@ th, td {
   color: red;
 }
 
+.header__title {
+  color: black;
+}
+
+.header__create-event {
+  background-color: blue;
+}
+
 .calendar {
   border: 1px solid black;
 }
@@ -56,9 +64,5 @@ th, td {
 
 .table__day {
   height: 50px;
-}
-
-.hide__element {
-  display: none;
 }
 /*# sourceMappingURL=calendar-layout.css.map */

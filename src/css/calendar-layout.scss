@@ -17,6 +17,10 @@ th,td {
     color: red;
   }
   &__title{
+    color: black;
+  }
+  &__create-event{
+    background-color: blue;
   }
 }
 
@@ -45,6 +49,9 @@ th,td {
   }
   &__day{
     height: 50px;
+    // &:hover{
+    //   background-color:aquamarine;
+    // }
   }
 }
 
