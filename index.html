@@ -13,17 +13,17 @@
 </head>
 
 <body>
-    <header id="header" class="header">
+    <header class="header " id="header">
         <h1 id="h1" class="header__title">Calendar</h1>
         <button  id="btn__create-event" type="button" class="header__create-event"><i class="fa-solid fa-circle-plus"></i> Create event</button>
     </header>
-    <main id="calendar" class="calendar">
+    <main class="calendar" id="calendar">
         <header class="calendar__header ">
             <button class="button__previous"><</button>
             <h2 class="calendar__month">MONTH</h2>
             <button class="button__next">></button>
         </header>
-        <section class="calendar__section ">
+        <section class="calendar__section "  id="calendar__section">
             <table class="calendar__table">
                 <tr class="table__row-title">
                     <th class="table__weekday">Monday</th>
@@ -88,9 +88,9 @@
         <article id="modal__content" class="modal__content">
             <header class="modal__header">
                 <h2 class="modal__new">New event</h2>
-                <button class="modal__close">X</button>
+                <button class="modal__close" id="modal__close">X</button>
             </header>
-            <form action="" class="modal__form">
+            <form action="" class="modal__form" id="modal__form">
                 <label for="modal__title">Title</label>
                 <input type="text" id="modal__title" name="modal__title">
                 <label for="modal__initial-date">Initial Date</label>
@@ -117,10 +117,11 @@
                     <option value=""></option>
                     <option value=""></option>
                 </select>
-                <submit class="modal__save">SAVE</submit>
+                <input type="submit" class="modal__save">SAVE</input>
             </form>
-        </article>            
+        </article>
     </section>
 </body>
 
 </html>
+
