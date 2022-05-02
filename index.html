@@ -5,9 +5,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/6d9b3c0e02.js" crossorigin="anonymous"></script>
     <script type="module" src="./src/js/main.js"></script>
     <script type="module" src="./src/js/calendar.js"></script>
-    
     <link rel="stylesheet" href="./src/css/styles.css">
     <title>Calendar</title>
 </head>
@@ -15,7 +15,7 @@
 <body>
     <header class="header " id="header">
         <h1 id="h1" class="header__title">Calendar</h1>
-        <button  id="btn__create-event" type="button" class="header__create-event">+ Create event</button>
+        <button  id="btn__create-event" type="button" class="header__create-event"><i class="fa-solid fa-circle-plus"></i> Create event</button>
     </header>
     <main class="calendar" id="calendar">
         <header class="calendar__header ">
@@ -97,20 +97,20 @@
                 </div>
                 <div class="form__row">
                     <label for="modal__initial-date">Initial Date</label>
-                    <input type="date" id="modal__initial-date" name="modal__initial-date">
+                    <input type="datetime-local" id="modal__initial-date" name="modal__initial-date">
                     
                 </div>
                 <div class="form__row">
-                    <label for="modal__end-checkbox">End Date</label>
                     <input type="checkbox" id="modal__end-checkbox" name="modal__end-checkbox">
+                    <label for="modal__end-checkbox">End Date</label>
                 </div>
                 <div class="form__row">
                     <label for="modal__end-date">End Date</label>
-                    <input type="date" id="modal__end-date" name="modal__end-date">
+                    <input type="datetime-local" id="modal__end-date" name="modal__end-date">
                 </div>
                 <div class="form__row">
-                    <label for="modal__reminder-checkbox">Remind Me</label>
                     <input type="checkbox" id="modal__reminder-checkbox" name="modal__reminder-checkbox">
+                    <label for="modal__reminder-checkbox">Remind Me</label>
                 </div>
                 <div class="form__row">
                     <label for="modal__reminder-time">Reminder Time</label>
@@ -136,7 +136,7 @@
                         <option value="peerhelping">Peer helping</option>
                         <option value="workshop">Workshop</option>
                         <option value="afterwork">Afterwork</option>
-                        <option value="beerwith"> Beer with</option>
+                        <option value="beerwith">Beer with</option>
                     </select>
                 </div>
                 <input type="submit" class="modal__save"></input>
