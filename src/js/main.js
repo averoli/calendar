@@ -48,3 +48,13 @@ function saveEventData(event, year, month, day){
 function clearFormData(){
     document.getElementById("modal__form").reset()
 }
+
+
+//Today as input value by default
+Date.prototype.toDateInputValue = () => {
+    let localTime = new Date()
+    localTime.setMinutes(localTime.getMinutes()-localTime.getTimezoneOffset()) //timeZone Support
+    return localTime.toJSON().slice(0,10)
+}
+document.getElementById("modal__initial-date").value = new Date().toDateInputValue();
+document.getElementById("modal__end-date").value = new Date().toDateInputValue();
