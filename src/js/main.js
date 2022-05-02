@@ -3,8 +3,10 @@ const modal = document.querySelector('#modal');
 const saveModalBtn = document.querySelector('#modal__save');
 const header = document.querySelector('#header');
 const calendar = document.querySelector('#calendar');
-const modalCreateBtn = document.querySelector("#btn__create-event")
-const modalContent = document.querySelector("#modal__content")
+const modalCreateBtn = document.querySelector("#btn__create-event");
+const modalContent = document.querySelector("#modal__content");
+const modalForm = document.querySelector("#modal__form");
+
 
 modalCreateBtn.addEventListener('click', () => {modal.classList.toggle("hide__element")})
 
@@ -54,7 +56,37 @@ function clearFormData(){
 Date.prototype.toDateInputValue = () => {
     let localTime = new Date()
     localTime.setMinutes(localTime.getMinutes()-localTime.getTimezoneOffset()) //timeZone Support
+    console.log(localTime.toJSON())
     return localTime.toJSON().slice(0,10)
 }
 document.getElementById("modal__initial-date").value = new Date().toDateInputValue();
 document.getElementById("modal__end-date").value = new Date().toDateInputValue();
+
+
+
+
+
+
+// FORM VALIDATION ////
+const initialDate = document.getElementById("modal__initial-date");
+const today = newDate();
+const endDate = document.getElementById("modal__end-date");
+const icon = document.getElementById("icon")
+
+saveModalBtn.addEventListener("click", () => {
+
+    function formValidation()
+})
+
+function formValidation (e) {
+
+    switch (e.target.name) {
+
+        case 'modal__initial-date':
+            if(initialDate < today || initialDate> endDate){
+                icon.classList.remove('hide__class')
+            }
+
+
+    }
+}
