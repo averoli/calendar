@@ -2,7 +2,7 @@ const closeModalBtn = document.querySelector('#modal__close');
 const modal = document.querySelector('#modal');
 const saveModalBtn = document.querySelector('#modal__save');
 const header = document.querySelector('#header');
-const calendar = document.querySelector('#calendar');
+
 const modalCreateBtn = document.querySelector("#btn__create-event")
 const modalContent = document.querySelector("#modal__content")
 

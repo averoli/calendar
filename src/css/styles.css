@@ -8,7 +8,9 @@
 @import url('./calendar-layout.css');
 /* New Event LAYOUT */
 @import url('./event-layout.css');
+/*FONTS*/
+/* @import url('./fonts.css'); */
 
-.hide__element{
+.hidelement{
     display: none;
   }

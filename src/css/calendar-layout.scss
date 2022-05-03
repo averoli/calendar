@@ -24,9 +24,9 @@ th,td {
   }
 }
 
+
 .calendar{
   border: 1px solid black;
-
   &__table{
     width: 100%;
     table-layout: fixed;
@@ -38,7 +38,15 @@ th,td {
     flex-direction: row;
     justify-content: space-between;
   }
+
+  @media(min-width: 350px){
+    &__header{
+      background-color: #F3D083;
+    }
+  }
 }
+
+
 
 .table{
   &__row{
@@ -52,15 +60,8 @@ th,td {
 
      &:hover {
       background-color:aquamarine;
-      // height: 25px;
-      // width: 25px;
-      // color: #bbb;
-      // border-radius: 50%;
-      // display: inline-block;
-  
      }
   }
 }
-
 
 

@@ -54,6 +54,12 @@ th, td {
           justify-content: space-between;
 }
 
+@media (min-width: 350px) {
+  .calendar__header {
+    background-color: #F3D083;
+  }
+}
+
 .table__row {
   height: 100px;
 }

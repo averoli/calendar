@@ -14,11 +14,11 @@
 
 <body>
     <header class="header " id="header">
-        <h1 id="h1" class="header__title">Calendar</h1>
+    
         <button  id="btn__create-event" type="button" class="header__create-event"><i class="fa-solid fa-circle-plus"></i> Create event</button>
     </header>
-    <main class="calendar" id="calendar">
-        <header class="calendar__header ">
+    <main class="calendar" id="header">
+        <header class="calendar__header">
             <button class="button__previous"><</button>
             <h2 class="calendar__month">MONTH</h2>
             <button class="button__next">></button>
@@ -35,7 +35,7 @@
                     <th class="table__weekday">Sunday</th>
                 </tr>
                 <tr class="table__row">
-                    <td class="table__day"></td>
+                    <td class="table__day"><div id="event-label" class="event-label">Tralala</div></td>
                     <td class="table__day"></td>
                     <td class="table__day"></td>
                     <td class="table__day"></td>
@@ -143,6 +143,7 @@
             </form>
         </article>
     </section>
+    
 </body>
 
 </html>
