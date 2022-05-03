@@ -49,12 +49,51 @@ function clearFormData(){
     document.getElementById("modal__form").reset()
 }
 
-
 //Today as input value by default
 Date.prototype.toDateInputValue = () => {
     let localTime = new Date()
     localTime.setMinutes(localTime.getMinutes()-localTime.getTimezoneOffset()) //timeZone Support
     return localTime.toJSON().slice(0,10)
 }
+
 document.getElementById("modal__initial-date").value = new Date().toDateInputValue();
 document.getElementById("modal__end-date").value = new Date().toDateInputValue();
+
+function monthDayNumbers(year, month){
+    const firstMonthDay = new Date(year, month  -1, 1)
+    const firstDayIndex = firstMonthDay.getDay()
+    const counterDay = new Date(year, month -1, -firstDayIndex +2)
+    const monthDays = []
+    for (let i= 0; i < 35; i++){
+        monthDays.push(counterDay.getDate())
+        counterDay.setDate(counterDay.getDate() + 1)
+    }
+    return monthDays
+}
+// function monthDayNumbers(year, month){
+//     const firstMonthDay = new Date(year, month  -1, 1)
+//     const daysInMonth = new Date(year, month, 0).getDate()
+//     const firstDayIndex = firstMonthDay.getDay()
+//     const monthDays = []
+//     for (let i = 1; i <= daysInMonth; i++){
+//         monthDays[i+firstDayIndex-2] = i ;
+//     }
+//     return monthDays
+// }
+// function monthDayNumbers3(year,month){
+//     const firstMonthDay = new Date(year, month  -1, 1)
+//     const firstDayIndex = firstMonthDay.getDay()
+//     const monthDays = []
+//     for (let i= 0; i < 35; i++){
+//         const day = new Date(year, month -1 , i - firstDayIndex +2).getDate()
+//         monthDays.push(day)
+//     }
+//     return monthDays
+// }
+
+
+
+
+
+
+
