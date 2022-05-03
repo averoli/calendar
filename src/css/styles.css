@@ -12,3 +12,14 @@
 .hide__element{
     display: none;
   }
+  .validation_group-incorrect {
+    border: 3px solid #bb2929;
+  } 
+  .validation_group-correct {
+    border:3px solid #119200;
+  
+    
+  }
+  .fa-times-circle{
+      color:#bb2929
+  }
