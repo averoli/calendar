@@ -1,14 +1,19 @@
-/*Import*/
-import {displayDayEvents} from './event.js'
-
-/*Constant declaration*/
+const closeModalBtn = document.querySelector('#modal__close');
+const modal = document.querySelector('#modal');
+const saveModalBtn = document.querySelector('#modal__save');
 
 const calendar = document.querySelector('#calendar');
-const modal = document.querySelector('#modal');
 const modalCreateBtn = document.querySelector("#btn__create-event");
+const modalContent = document.querySelector("#modal__content");
+const modalForm = document.querySelector("#modal__form");
 const modalTitle = document.getElementById('modal__title');
 const initialDate = document.getElementById("modal__initial-date");
 const today = new Date();
+const endDate = document.getElementById("modal__end-date");
+const endCheckbox = document.getElementById("modal__end-checkbox");
+const reminderDiv = document.getElementById("reminder__section")
+const reminderCheckbox = document.getElementById("modal__reminder-checkbox");
+
 
 
 const reg = {
@@ -17,38 +22,31 @@ const reg = {
 };
 
 
-// Open/Close modal
-modalCreateBtn.addEventListener('click', () => {modal.classList.toggle("hide__element")})
+
+modalCreateBtn.addEventListener('click', () =>
+ {modal.classList.toggle("hide__element")})
+
 modal.addEventListener('click', (e) => {
     if(e.target.id ==="modal" || e.target.id === "modal__close"){
         modal.classList.toggle("hide__element")
 }})
 
-// Submit
-document.querySelector('form').addEventListener('submit', e =>{
-    e.preventDefault()
-    const data = Object.fromEntries(
-        new FormData(e.target)
+//get Data
+document.querySelector('form')
+    .addEventListener('submit', e =>{
+        e.preventDefault()
+        const data = Object.fromEntries(
+            new FormData(e.target)
         )
-    const initialDate = data["modal__initial-date"].split('-').map(a => parseInt(a))
-    const initialDate_bis = data["modal__initial-date"]
-    const tableIndex = new Date(...initialDate).getDate()
-    const eventsUpdated = saveEventData(data, initialDate)
-    
-})
+        const initialDate = data["modal__initial-date"].split('-').map(a => parseInt(a))
+        saveEventData(data, ...initialDate)
+    })
 
-function selectDay(data){
-    const tableDays = document.querySelectorAll("#calendar__table td")
-    return new Date(...data).getDate() + new Date()
-}
-
-
-//Save event data from Form, order day elements by initial Date
 function saveEventData(event, year, month, day){
-    
-    // const {year, month, day} = args
+  
     let data = JSON.parse(localStorage.getItem("eventInfo"))
-    
+    console.log(year, month, day)
+
     if (data === null){
         data = {}
     }
@@ -64,7 +62,6 @@ function saveEventData(event, year, month, day){
         data[year][month][day].push(event)
     }
     localStorage.setItem("eventInfo", JSON.stringify(data))
-    return data
 }
 
 function clearFormData(){
@@ -75,24 +72,18 @@ function clearFormData(){
 Date.prototype.toDateInputValue = () => {
     let localTime = new Date()
     localTime.setMinutes(localTime.getMinutes()-localTime.getTimezoneOffset()) //timeZone Support
-    console.log(localTime.toJSON())
     return localTime.toJSON().slice(0,10)
 }
+
 document.getElementById("modal__initial-date").value = new Date().toDateInputValue();
 document.getElementById("modal__end-date").value = new Date().toDateInputValue();
-console.log(document.getElementById("modal__initial-date").value);
-
-
-
-
-
 
 function monthDayNumbers(year, month){
     const firstMonthDay = new Date(year, month  -1, 1)
     const firstDayIndex = firstMonthDay.getDay()
     const counterDay = new Date(year, month -1, -firstDayIndex +2)
     const monthDays = []
-    for (let i= 0; i < 35; i++){ //need to put 35, something more generic
+    for (let i= 0; i < 35; i++){
         monthDays.push(counterDay.getDate())
         counterDay.setDate(counterDay.getDate() + 1)
     }

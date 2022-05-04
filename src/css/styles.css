@@ -16,3 +16,10 @@
 .hide__element {
   display: none;
 }
+.validation_group-incorrect{
+  border: 1px solid red
+}
+
+.validation_group-correct{
+  border: 1px solid green
+}
