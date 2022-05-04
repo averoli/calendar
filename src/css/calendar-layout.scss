@@ -48,7 +48,7 @@ th,td {
     }
   }
   &__day{
-    height: 50px;
+    height: 10rem;
 
      &:hover {
       background-color:aquamarine;
@@ -59,7 +59,13 @@ th,td {
       // display: inline-block;
   
      }
+
   }
+}
+
+// Parche para ver los bordes de los eventos
+div{
+  border: 1px solid black;
 }
 
 

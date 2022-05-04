@@ -8,6 +8,8 @@
 @import url('./calendar-layout.css');
 /* New Event LAYOUT */
 @import url('./event-layout.css');
+/*Event styles*/
+@import url('./event-styles.css');
 
 .hide__element{
     display: none;

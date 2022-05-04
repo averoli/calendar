@@ -1,0 +1,48 @@
+* {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+.event {
+  color: white;
+  height: 50px;
+}
+
+.event__delete:hover {
+  cursor: pointer;
+}
+
+.event--meeting {
+  background-color: #f04e4e;
+}
+
+.event--personal {
+  background-color: #ecd042;
+}
+
+.event--study {
+  background-color: #70ab51;
+}
+
+.event--coffeewith {
+  background-color: black;
+}
+
+.event--peerhelping {
+  background-color: #d672d6;
+}
+
+.event--workshop {
+  background-color: #494fff;
+}
+
+.event--afterwork {
+  background-color: #7c7b7b;
+}
+
+.event--beerwith {
+  background-color: #6d422c;
+}
+/*# sourceMappingURL=event-styles.css.map */

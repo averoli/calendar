@@ -63,10 +63,14 @@ th, td {
 }
 
 .table__day {
-  height: 50px;
+  height: 10rem;
 }
 
 .table__day:hover {
   background-color: aquamarine;
+}
+
+div {
+  border: 1px solid black;
 }
 /*# sourceMappingURL=calendar-layout.css.map */
