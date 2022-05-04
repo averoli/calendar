@@ -2,13 +2,10 @@
 setInterval(getEventsToday, 10000)
 
 
-
-
-
 function getEventsToday(){
     let allEvents = JSON.parse(localStorage.getItem("eventInfo"));
     const today = new Date ();
-    const todayArray = [today.getFullYear(), today.getMonth() + 1, today.getDay() + 1, today.getHours(), today.getMinutes()]
+    const a = [today.getFullYear(), today.getMonth() + 1, today.getDay() + 1, today.getHours(), today.getMinutes()]
  
     let eventsToday = allEvents[todayArray[0]][todayArray[1]][todayArray[2]];
     if(eventsToday.length > 0){
