@@ -4,11 +4,30 @@ import {displayDayEvents} from './event.js'
 /*Constant declaration*/
 const header = document.querySelector('#header');
 const calendar = document.querySelector('#calendar');
+<<<<<<< HEAD
 const modal = document.querySelector('#modal');
 const closeModalBtn = document.querySelector('#modal__close');
 const saveModalBtn = document.querySelector('#modal__save');
 const modalCreateBtn = document.querySelector("#btn__create-event")
 const modalContent = document.querySelector("#modal__content")
+=======
+const modalCreateBtn = document.querySelector("#btn__create-event");
+const modalContent = document.querySelector("#modal__content");
+const modalForm = document.querySelector("#modal__form");
+const modalTitle = document.getElementById('modal__title');
+const initialDate = document.getElementById("modal__initial-date");
+const today = new Date();
+const endDate = document.getElementById("modal__end-date");
+const endCheckbox = document.getElementById("modal__end-checkbox");
+const reminderDiv = document.getElementById("reminder__section")
+const reminderCheckbox = document.getElementById("modal__reminder-checkbox");
+
+const reg = {
+    modal_title: /^.{4,60}$/ ,
+    modal_description: /^.{0,500}$/
+};
+
+>>>>>>> 2d9b74f3acfbfb8254ef2c0239de82d8e35c6603
 
 
 // Open/Close modal
@@ -69,10 +88,17 @@ function clearFormData(){
 Date.prototype.toDateInputValue = () => {
     let localTime = new Date()
     localTime.setMinutes(localTime.getMinutes()-localTime.getTimezoneOffset()) //timeZone Support
+    console.log(localTime.toJSON())
     return localTime.toJSON().slice(0,10)
 }
 document.getElementById("modal__initial-date").value = new Date().toDateInputValue();
 document.getElementById("modal__end-date").value = new Date().toDateInputValue();
+console.log(document.getElementById("modal__initial-date").value);
+
+
+
+
+
 
 function monthDayNumbers(year, month){
     const firstMonthDay = new Date(year, month  -1, 1)
@@ -94,8 +120,6 @@ calendar.addEventListener('click', (e) => {
         modal.classList.toggle("hide__element")
     } 
 })
-
-
 // Show delete 
 calendar.addEventListener("mouseover" , (e) => {
     if(e.target.hasAttribute("data-event")){
@@ -131,3 +155,66 @@ function updateFormData(eventInfo){
     }
 }
 
+function formValidation(e) {
+    switch (e.target.name) {
+        case 'modal__title':
+            if(reg.modal_title.test(e.target.value)) {
+                modalTitle.classList.remove('validation_group-incorrect');
+                modalTitle.classList.add('validation_group-correct');
+                document.getElementById('icon1').classList.add('hide__element');
+            }else{
+                modalTitle.classList.add('validation_group-incorrect');
+                modalTitle.classList.remove('validation_group-correct');
+                document.getElementById('icon1').classList.remove('hide__element');
+            }
+            break;
+        case 'modal__initial-date':  
+            console.log(initialDate.value);
+            if(today.getTime()< initialDate.value.getTime()){
+
+                initialDate.classList.remove('validation_group-incorrect');
+                initialDate.classList.add('validation_group-correct');
+                document.getElementById('icon2').classList.remove('hide__element');
+
+            }else {
+                initialDate.classList.add('validation_group-incorrect');
+                initialDate.classList.remove('validation_group-correct');
+                document.getElementById('icon2').classList.add('hide__element');
+            }break;
+
+        case 'modal__end-checkbox':
+            
+            endDate.disabled = !endDate.disabled
+            break;
+
+        case 'modal__end-date':
+            if (initialDate.value.getDate()> finalDate.value.getDate()){
+                endDate.classList.remove('validation_group-incorrect');
+                endDate.classList.add('validation_group-correct');
+                document.getElementById('icon3').classList.remove('hide__element');
+            }else{
+                endDate.classList.add('validation_group-incorrect');
+                endDate.classList.remove('validation_group-correct');
+                document.getElementById('icon1').classList.remove('hide__element');
+            }break;
+
+        case 'modal__reminder-checkbox':
+          if (reminderCheckbox.checked) {
+                    document.querySelector('#reminder__selection').classList.remove('hide__element');
+                    
+                }else{
+                    document.querySelector('#reminder__selection').classList.add('hide__element');
+                } break;
+
+            case 'modal_description':
+                if(!reg.modal_description.test(e.target.value)){
+                    document.querySelector('#modal_description').classList.add('validation_group-incorrect');
+                 
+             }   break;
+
+        
+    }
+
+}
+
+modalForm.addEventListener('click', formValidation)

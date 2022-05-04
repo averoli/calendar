@@ -93,26 +93,33 @@
             <form action="" class="modal__form" id="modal__form">
                 <div class="form__row">
                     <label for="modal__title">Title</label>
-                    <input type="text" id="modal__title" name="modal__title" data-event-info>
+                    <input type="text" class='input' id="modal__title" name="modal__title">
+                    <i id='icon1'class="formulario__validacion-estado fas fa-times-circle hide__element"></i>
+
                 </div>
                 <div class="form__row">
                     <label for="modal__initial-date">Initial Date</label>
-                    <input type="datetime-local" id="modal__initial-date" name="modal__initial-date" data-event-info>
-                    
+                    <input type="datetime-local" id="modal__initial-date" class='input' name="modal__initial-date">
+                    <i id='icon2'class="fas fa-times-circle hide__element"></i>
+
+
                 </div>
                 <div class="form__row">
-                    <input type="checkbox" id="modal__end-checkbox" name="modal__end-checkbox">
+                    <input type="checkbox" id="modal__end-checkbox" class='input' name="modal__end-checkbox">
                     <label for="modal__end-checkbox">End Date</label>
+                    
+
                 </div>
                 <div class="form__row">
                     <label for="modal__end-date">End Date</label>
-                    <input type="datetime-local" id="modal__end-date" name="modal__end-date" data-event-info>
+                    <input type="datetime-local" id="modal__end-date" class='input' disabled name="modal__end-date">
+                    <i id='icon3'class="fas fa-times-circle hide__element"></i>
                 </div>
                 <div class="form__row">
-                    <input type="checkbox" id="modal__reminder-checkbox" name="modal__reminder-checkbox">
+                    <input type="checkbox" id="modal__reminder-checkbox" class='input' name="modal__reminder-checkbox">
                     <label for="modal__reminder-checkbox">Remind Me</label>
                 </div>
-                <div class="form__row">
+                <div class="form__row hide__element" id="reminder__selection">
                     <label for="modal__reminder-time">Reminder Time</label>
                     <select type="select" id="modal__reminder-time" name="modal__reminder-time" data-event-info>
                         <option value="5">5 minutes before</option>
@@ -144,14 +151,5 @@
         </article>
     </section>
 </body>
-
-<div id="parent">
-    <p id="son-1" date-event>I'm a son</p>
-    <p id="son-2" date-event>I'm a son</p>
-    <p id="son-3" date-event>I'm a son</p>
-    <p id="son-4" date-event>I'm a son</p>
-    <p id="son-5" date-event>I'm a son</p>
-</div>
-
 </html>
 
