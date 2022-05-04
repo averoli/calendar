@@ -20,6 +20,7 @@ const reg = {
 };
 
 
+
 modalCreateBtn.addEventListener('click', () => {modal.classList.toggle("hide__element")})
 
 modal.addEventListener('click', (e) => {
@@ -67,7 +68,6 @@ function clearFormData(){
 Date.prototype.toDateInputValue = () => {
     let localTime = new Date()
     localTime.setMinutes(localTime.getMinutes()-localTime.getTimezoneOffset()) //timeZone Support
-    console.log(localTime.toJSON())
     return localTime.toJSON().slice(0,10)
 }
 
@@ -76,7 +76,7 @@ document.getElementById("modal__end-date").value = new Date().toDateInputValue()
 console.log(document.getElementById("modal__initial-date").value);
 
 
-
+initialDate.setAttribute('min', '0');
 
 
 
