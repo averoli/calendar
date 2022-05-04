@@ -73,15 +73,15 @@ td {
 }
 
 .table__day {
-  height: 50px;
+  height: 10rem;
 }
 
 .table__day:hover {
   background-color: aquamarine;
 }
 
-.table__weekday {
-  font-weight: 300;
+div {
+  border: 1px solid black;
 }
 
 @media (max-width: 700px) {

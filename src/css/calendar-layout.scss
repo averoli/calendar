@@ -71,18 +71,27 @@ td {
       width: 20px;
     }
   }
-  &__day {
-    height: 50px;
+  &__day{
+    height: 10rem;
 
-    &:hover {
-      background-color: aquamarine;
-    }
+     &:hover {
+      background-color:aquamarine;
+      // height: 25px;
+      // width: 25px;
+      // color: #bbb;
+      // border-radius: 50%;
+      // display: inline-block;
+  
+     }
+
   }
 }
 
-.table__weekday {
-  font-weight: 300;
+// Parche para ver los bordes de los eventos
+div{
+  border: 1px solid black;
 }
+
 
 @media (max-width: 700px) {
   .button__text,

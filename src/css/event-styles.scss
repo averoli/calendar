@@ -1,0 +1,47 @@
+$meetingColor : rgb(240,78,78);
+$personalColor: rgb(236, 208, 66);
+$studyColor: rgb(112, 171, 81);
+$coffeewithColor: rgb(0, 0, 0);
+$peerhelpingColor: rgb(214, 114, 214);
+$workshopColor: rgb(73, 79, 255);
+$afterworkColor: rgb(124, 123, 123);
+$beerwithColor: rgb(109, 66, 44);
+
+*{
+    user-select: none;
+}
+
+.event{
+
+    color: white;
+    height: 50px;
+
+    &__delete:hover{
+        cursor: pointer;
+    }
+
+    &--meeting{
+        background-color: $meetingColor;
+    }
+    &--personal{
+        background-color: $personalColor;
+    }
+    &--study{
+        background-color: $studyColor;
+    }
+    &--coffeewith{
+        background-color: $coffeewithColor;
+    }
+    &--peerhelping{
+        background-color: $peerhelpingColor;
+    }
+    &--workshop{
+        background-color: $workshopColor;
+    }
+    &--afterwork{
+        background-color: $afterworkColor;
+    }
+    &--beerwith{
+        background-color: $beerwithColor;
+    }
+}
