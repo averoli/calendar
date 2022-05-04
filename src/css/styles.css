@@ -1,16 +1,18 @@
 /*Main CSS*/
 
 /*RESET*/
-@import url('./reset.css');
+@import url("./reset.css");
 /* New Event LAYOUT */
-@import url('./event-layout.css');
+@import url("./event-layout.css");
 /*CALENDAR LAYOUT*/
-@import url('./calendar-layout.css');
+@import url("./calendar-layout.css");
 /* New Event LAYOUT */
-@import url('./event-layout.css');
+@import url("./event-layout.css");
 /*FONTS*/
 /* @import url('./fonts.css'); */
 
-.hidelement{
-    display: none;
-  }
+
+
+.hide__element {
+  display: none;
+}

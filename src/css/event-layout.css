@@ -1,5 +1,7 @@
 .modal {
-  display: block;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   position: fixed;
   /*Stay in place*/
   z-index: 1;

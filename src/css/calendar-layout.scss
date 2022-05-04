@@ -1,67 +1,100 @@
-
-
-tr, th, td {
-  border: 1px solid black;
+main {
+  font-family: "Open Sans", sans-serif;
+  color: #856218;
+}
+.calendar__month{
+  margin: 0;
 }
 
-th,td {
-  height: 40px;;
+.calendar__year {
+  font-weight: 400;
+  margin: 0;
 }
 
-.header{
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-
-  &__create-button{
-    color: red;
-  }
-  &__title{
-    color: black;
-  }
-  &__create-event{
-    background-color: blue;
-  }
+table {
+  border-collapse: collapse;
 }
 
+tr,
+th,
+td {
+  border: 1px solid #88bfc4;
+}
 
-.calendar{
-  border: 1px solid black;
-  &__table{
+th,
+td {
+  height: 40px;
+}
+
+ 
+  // display: flex;
+  // flex-direction: row;
+  // justify-content: center;
+
+ 
+  @media (max-width: 700px) {
+    .header__create-event {
+      background-color: #88bfc4;
+      border: none;
+      border-radius: 50%;
+      width: 3rem;
+      height: 3rem;
+      top: 50%;
+    }
+  }
+
+
+.calendar {
+  &__table {
     width: 100%;
     table-layout: fixed;
-    border: 1px solid red;
   }
 
-  &__header{
+  &__header {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: space-around;
+    align-items: center;
   }
 
-  @media(min-width: 350px){
-    &__header{
-      background-color: #F3D083;
+  @media (max-width: 700px) {
+    &__header {
+      background-color: #f3d083;
     }
   }
 }
 
-
-
-.table{
-  &__row{
+.table {
+  &__row {
     height: 100px;
-    &-title{
+    &-title {
       width: 20px;
     }
   }
-  &__day{
+  &__day {
     height: 50px;
 
-     &:hover {
-      background-color:aquamarine;
-     }
+    &:hover {
+      background-color: aquamarine;
+    }
   }
 }
 
+.table__weekday {
+  font-weight: 300;
+}
 
+@media (max-width: 700px) {
+  .button__text,
+  .button__previous,
+  .button__next {
+    display: none;
+  }
+}
+@media (max-width: 500px) {
+  tr,
+  th,
+  td {
+    border: none;
+  }
+}

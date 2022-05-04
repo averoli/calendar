@@ -8,34 +8,40 @@
     <script src="https://kit.fontawesome.com/6d9b3c0e02.js" crossorigin="anonymous"></script>
     <script type="module" src="./src/js/main.js"></script>
     <script type="module" src="./src/js/calendar.js"></script>
+    <script type="module" src="./src/js/timer.js"></script>
     <link rel="stylesheet" href="./src/css/styles.css">
     <title>Calendar</title>
 </head>
 
 <body>
-    <header class="header " id="header">
-    
-        <button  id="btn__create-event" type="button" class="header__create-event"><i class="fa-solid fa-circle-plus"></i> Create event</button>
-    </header>
+    <!-- <header class="header " id="header">
+       
+    </header> -->
     <main class="calendar" id="header">
         <header class="calendar__header">
             <button class="button__previous"><</button>
-            <h2 class="calendar__month">MONTH</h2>
+            <div>
+            <h2 class="calendar__month">MAY</h2>
+            <h2 class="calendar__year">2022</h2>
+        </div>
+            <button  id="btn__create-event" type="button" class="header__create-event"> 
+                <p class="button__text">Create event</p>
+                </button>
             <button class="button__next">></button>
         </header>
         <section class="calendar__section "  id="calendar__section">
             <table class="calendar__table">
                 <tr class="table__row-title">
-                    <th class="table__weekday">Monday</th>
-                    <th class="table__weekday">Tuesday</th>
-                    <th class="table__weekday">Wednesday</th>
-                    <th class="table__weekday">Thrusday</th>
-                    <th class="table__weekday">Friday</th>
-                    <th class="table__weekday">Saturday</th>
-                    <th class="table__weekday">Sunday</th>
+                    <th class="table__weekday sun">SUN</th>
+                    <th class="table__weekday mon">MON</th>
+                    <th class="table__weekday tue">TUE</th>
+                    <th class="table__weekday wed">WED</th>
+                    <th class="table__weekday thu">THU</th>
+                    <th class="table__weekday fri">FRI</th>
+                    <th class="table__weekday sat">SAT</th>
                 </tr>
                 <tr class="table__row">
-                    <td class="table__day"><div id="event-label" class="event-label">Tralala</div></td>
+                    <td class="table__day"></td>
                     <td class="table__day"></td>
                     <td class="table__day"></td>
                     <td class="table__day"></td>
@@ -80,6 +86,9 @@
                     <td class="table__day"></td>
                 </tr>
             </table>
+            <footer id="calendar__footer" class="calendar__footer">
+
+            </footer>
         </section>
         
 
