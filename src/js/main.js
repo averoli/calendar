@@ -13,6 +13,8 @@ const endDate = document.getElementById("modal__end-date");
 const endCheckbox = document.getElementById("modal__end-checkbox");
 const reminderDiv = document.getElementById("reminder__section")
 const reminderCheckbox = document.getElementById("modal__reminder-checkbox");
+const initDateValue = initialDate.parse();
+const 
 
 const reg = {
     modal_title: /^.{4,60}$/ ,

@@ -1,44 +1,46 @@
-tr, th, td {
-  border: 1px solid black;
+main {
+  font-family: "Open Sans", sans-serif;
+  color: #856218;
 }
 
-th, td {
+.calendar__month {
+  margin: 0;
+}
+
+.calendar__year {
+  font-weight: 400;
+  margin: 0;
+}
+
+table {
+  border-collapse: collapse;
+}
+
+tr,
+th,
+td {
+  border: 1px solid #88bfc4;
+}
+
+th,
+td {
   height: 40px;
 }
 
-.header {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-}
-
-.header__create-button {
-  color: red;
-}
-
-.header__title {
-  color: black;
-}
-
-.header__create-event {
-  background-color: blue;
-}
-
-.calendar {
-  border: 1px solid black;
+@media (max-width: 700px) {
+  .header__create-event {
+    background-color: #88bfc4;
+    border: none;
+    border-radius: 50%;
+    width: 3rem;
+    height: 3rem;
+    top: 50%;
+  }
 }
 
 .calendar__table {
   width: 100%;
   table-layout: fixed;
-  border: 1px solid red;
 }
 
 .calendar__header {
@@ -49,9 +51,17 @@ th, td {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+@media (max-width: 700px) {
+  .calendar__header {
+    background-color: #f3d083;
+  }
 }
 
 .table__row {
@@ -63,10 +73,30 @@ th, td {
 }
 
 .table__day {
-  height: 50px;
+  height: 10rem;
 }
 
 .table__day:hover {
   background-color: aquamarine;
+}
+
+div {
+  border: 1px solid black;
+}
+
+@media (max-width: 700px) {
+  .button__text,
+  .button__previous,
+  .button__next {
+    display: none;
+  }
+}
+
+@media (max-width: 500px) {
+  tr,
+  th,
+  td {
+    border: none;
+  }
 }
 /*# sourceMappingURL=calendar-layout.css.map */

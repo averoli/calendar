@@ -1,25 +1,25 @@
 /*Main CSS*/
 
 /*RESET*/
-@import url('./reset.css');
+@import url("./reset.css");
 /* New Event LAYOUT */
-@import url('./event-layout.css');
+@import url("./event-layout.css");
 /*CALENDAR LAYOUT*/
-@import url('./calendar-layout.css');
+@import url("./calendar-layout.css");
 /* New Event LAYOUT */
-@import url('./event-layout.css');
+@import url("./event-layout.css");
+/*FONTS*/
+/* @import url('./fonts.css'); */
 
-.hide__element{
-    display: none;
-  }
-  .validation_group-incorrect {
-    border: 3px solid #bb2929;
-  } 
-  .validation_group-correct {
-    border:3px solid #119200;
-  
-    
-  }
-  .fa-times-circle{
-      color:#bb2929
-  }
+
+
+.hide__element {
+  display: none;
+}
+.validation_group-incorrect{
+  border: 1px solid red
+}
+
+.validation_group-correct{
+  border: 1px solid green
+}
