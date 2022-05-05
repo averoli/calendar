@@ -15,7 +15,6 @@ main {
     grid-template-rows: 2rem  repeat(5, 14rem);
     grid-template-columns: repeat(7, 14rem);
     margin-top: 3rem;
-    background-color: black;
     grid-gap: 1px;
     border: 1px solid black;
 
@@ -23,6 +22,10 @@ main {
       display: flex;
       direction: column;
       background-color: white;
+
+      &:hover{
+        background-color: #f3d083;
+      }
 
       &__info{
         display: flex;

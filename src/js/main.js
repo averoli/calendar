@@ -1,6 +1,8 @@
 //Import function from modules
 // import {formValidation} from './form.js'
 import {displayDayEvents} from './event.js'
+import {calendarStructure } from './calendar-display.js';
+calendarStructure("2022","07")
 /*
 Constant declaration
 */
@@ -17,6 +19,8 @@ const endDate = document.getElementById("modal__end-date");
 const endCheckbox = document.getElementById("modal__end-checkbox");
 const reminderDiv = document.getElementById("reminder__section")
 const reminderCheckbox = document.getElementById("modal__reminder-checkbox");
+const eventDisplayList = Array.from(document.querySelectorAll("[data-date]"))
+const calendarDayNumber = Array.from(document.querySelectorAll("[data-day='number']"))
 const reg = {
     modal_title: /^.{4,60}$/ ,
     modal_description: /^.{0,500}$/
@@ -33,7 +37,6 @@ modal.addEventListener('click', (e) => {
 function showModal(){
     modal.classList.remove("hide__element")
 }
-
 function hideModal(){
     modal.classList.add("hide__element")
     document.getElementById("modal__form").reset()
@@ -73,32 +76,32 @@ function saveEventData(event, date){
     }
     localStorage.setItem("eventInfo", JSON.stringify(data))
 }
+
 // Date in format ISO string YYYY-MM-DDTHH:mm:ss.sssZ
 function isSameMonth(date1, date2){
     return date1.substring(0,7) === date2.substring(0,7)
 }
 
 //Today as input value by default
-Date.prototype.toDateInputValue = () => {
-    let localTime = new Date()
-    localTime.setMinutes(localTime.getMinutes()-localTime.getTimezoneOffset()) //timeZone Support
-    return localTime.toJSON().slice(0,10)
-}
-
+// Date.prototype.toDateInputValue = () => {
+//     let localTime = new Date()
+//     localTime.setMinutes(localTime.getMinutes()-localTime.getTimezoneOffset()) //timeZone Support
+//     return localTime.toJSON().slice(0,10)
+// }
 // document.getElementById("modal__initial-date").value = new Date().toDateInputValue();
 // document.getElementById("modal__end-date").value = new Date().toDateInputValue();
 
-function monthDayNumbers(year, month){
-    const firstMonthDay = new Date(year, month  -1, 1)
-    const firstDayIndex = firstMonthDay.getDay()
-    const counterDay = new Date(year, month -1, -firstDayIndex +2)
-    const monthDays = []
-    for (let i= 0; i < 35; i++){
-        monthDays.push(counterDay.getDate())
-        counterDay.setDate(counterDay.getDate() + 1)
-    }
-    return monthDays
-}
+// function monthDayNumbers(year, month){
+//     const firstMonthDay = new Date(year, month  -1, 1)
+//     const firstDayIndex = firstMonthDay.getDay()
+//     const counterDay = new Date(year, month -1, -firstDayIndex +2)
+//     const monthDays = []
+//     for (let i= 0; i < 35; i++){
+//         monthDays.push(counterDay.getDate()) // date number
+//         counterDay.setDate(counterDay.getDate() + 1)
+//     }
+//     return monthDays
+// }
 
 calendar.addEventListener('click', (e) => {
     if(e.target.hasAttribute("data-event")){
@@ -108,6 +111,7 @@ calendar.addEventListener('click', (e) => {
         modal.classList.toggle("hide__element")
     } 
 })
+
 // Show delete 
 calendar.addEventListener("mouseover" , (e) => {
     if(e.target.hasAttribute("data-event")){
@@ -115,7 +119,6 @@ calendar.addEventListener("mouseover" , (e) => {
         child.classList.remove("hide__element")
     }
 })
-
 calendar.addEventListener('click', e =>{
     if(e.target.hasAttribute("data-event-action")){
         if (e.target.attributes["data-event-action"].nodeValue === "delete")
@@ -138,10 +141,7 @@ function updateFormData(eventInfo){
     let i = 0
     for (const info of eventInfo){
         formInputs[i].value = info
-        console.log(info, formInputs[i]);
         i++
     }
 }
 // modalForm.addEventListener('click', formValidation) // --> Activate when incorporating form validation
-
-displayDayEvents('2022-05-05')
