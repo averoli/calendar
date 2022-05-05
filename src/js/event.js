@@ -9,19 +9,36 @@ const eventClass = {
     afterwork: "event--afterwork",
     beerwith: "event--beerwith"
     }
+
 const createEvent = (params) => {
-    const className = eventClass[params.event.type]
-    const title = params.event.title
+    const className = eventClass[params.event["modal_type"]]
+    const title = params.event["modal__title"]
     const index = params.index
     const bin = `<span class="event__delete hide__element" data-event-action="delete">Delete</span>`
     return `<div class="${className} event" data-event="${index}" data-event-action="edit">${title}  ${bin}</div> <br>`
 }
 
-function displayDayEvents (eList, day){
-    day.innerHMTL = ''
-    for (let i = 0; i < eList.length; i++){
-        const event = createEvent({event: eList[i], index: i})
-        day.innerHTML += event
+// Date in format ISO string YYYY-MM-DDTHH:mm:ss.sssZ
+function displayDayEvents (date){
+    const tableDay = document.querySelector(`[data-date ="${date}"]`)
+    const [year, month, day] = date.split('-')
+    const eventList = JSON.parse(localStorage.getItem('eventInfo'))[year][month][day]
+    tableDay.innerHTML = ''
+    for (let i = 0; i < eventList.length; i++){
+        const event = createEvent({event: eventList[i], index: i})
+        tableDay.innerHTML += event
+    }
+    try {
+        const tableDay = document.querySelector(`[data-date ="${date}"]`)
+        const [year, month, day] = date.split('-')
+        const eventList = JSON.parse(localStorage.getItem('eventInfo'))[year][month][day]
+        tableDay.innerHTML = ''
+        for (let i = 0; i < eventList.length; i++){
+            const event = createEvent({event: eventList[i], index: i})
+            tableDay.innerHTML += event
+        }
+    } catch (error){
+        console.log("Error accessing database")
     }
 }
 
