@@ -20,7 +20,7 @@ main {
 
     &__day{
       display: flex;
-      direction: column;
+      flex-direction: column;
       background-color: white;
 
       &:hover{
@@ -33,8 +33,6 @@ main {
         justify-content: space-between;
         width: 100%;
         height: fit-content;
-        padding: 1.0rem 1.0rem;
-
       }
     }
     &__weekday{
@@ -72,6 +70,7 @@ main {
 .day{
   &__create-event{
       padding-top: 0.4rem;
+      padding-right: 1.0rem;
     }
   &__create-event:hover{
     color: rgb(243, 17, 17);

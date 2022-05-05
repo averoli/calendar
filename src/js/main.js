@@ -2,7 +2,7 @@
 // import {formValidation} from './form.js'
 import {displayDayEvents} from './event.js'
 import {calendarStructure } from './calendar-display.js';
-calendarStructure("2022","07")
+calendarStructure(2022, 5)
 /*
 Constant declaration
 */
@@ -47,12 +47,17 @@ document.querySelector('form').addEventListener('submit', e => {
     e.preventDefault()
     const data = Object.fromEntries(new FormData(e.target))
     const initialDate = data["modal__initial-date"]
-    // if (isSameMonth(today.toISOString(), initialDate)){
-    //     displayDayEvents([data], data["modal__initial-date"].substring(0,10))
-    // }
     saveEventData(data, initialDate)
+    if (isSameMonth(today.toISOString(), initialDate)){
+        displayDayEvents(data["modal__initial-date"].substring(0,10))
+    }
     hideModal()
 })
+
+function isSameMonth(date1, date2){
+    console.log(date1.substring(0,7) === date2.substring(0,7))
+    return date1.substring(0,7) === date2.substring(0,7)
+}
 
 //Open modal from particular day
 function saveEventData(event, date){
@@ -77,11 +82,6 @@ function saveEventData(event, date){
     localStorage.setItem("eventInfo", JSON.stringify(data))
 }
 
-// Date in format ISO string YYYY-MM-DDTHH:mm:ss.sssZ
-function isSameMonth(date1, date2){
-    return date1.substring(0,7) === date2.substring(0,7)
-}
-
 //Today as input value by default
 // Date.prototype.toDateInputValue = () => {
 //     let localTime = new Date()
@@ -90,18 +90,6 @@ function isSameMonth(date1, date2){
 // }
 // document.getElementById("modal__initial-date").value = new Date().toDateInputValue();
 // document.getElementById("modal__end-date").value = new Date().toDateInputValue();
-
-// function monthDayNumbers(year, month){
-//     const firstMonthDay = new Date(year, month  -1, 1)
-//     const firstDayIndex = firstMonthDay.getDay()
-//     const counterDay = new Date(year, month -1, -firstDayIndex +2)
-//     const monthDays = []
-//     for (let i= 0; i < 35; i++){
-//         monthDays.push(counterDay.getDate()) // date number
-//         counterDay.setDate(counterDay.getDate() + 1)
-//     }
-//     return monthDays
-// }
 
 calendar.addEventListener('click', (e) => {
     if(e.target.hasAttribute("data-event")){
@@ -112,19 +100,19 @@ calendar.addEventListener('click', (e) => {
     } 
 })
 
-// Show delete 
-calendar.addEventListener("mouseover" , (e) => {
-    if(e.target.hasAttribute("data-event")){
-        const child = e.target.children[0]
-        child.classList.remove("hide__element")
-    }
-})
-calendar.addEventListener('click', e =>{
-    if(e.target.hasAttribute("data-event-action")){
-        if (e.target.attributes["data-event-action"].nodeValue === "delete")
-            e.target.parentNode.remove()
-    }
-})
+// // Show delete 
+// calendar.addEventListener("mouseover" , (e) => {
+//     if(e.target.hasAttribute("data-event")){
+//         const child = e.target.children[0]
+//         child.classList.remove("hide__element")
+//     }
+// })
+// calendar.addEventListener('click', e =>{
+//     if(e.target.hasAttribute("data-event-action")){
+//         if (e.target.attributes["data-event-action"].nodeValue === "delete")
+//             e.target.parentNode.remove()
+//     }
+// })
 
 //Delete event from localStorage and return updated event day array
 function deleteEvent(index,...date){

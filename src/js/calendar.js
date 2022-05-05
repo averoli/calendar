@@ -16,7 +16,7 @@ const d = new Date();
 const tommorow = d + 1;
 
 for (let i = 0; i < openModalDay.length; i++) {
-  openModalDay[i].onmouseenter = function () {
+  openModalDay[i].onmouseenter = function () { 
     openModalDay[i].innerHTML =
       '<i class="fa-solid fa-circle-plus aria-hidden="true""></i>';
 

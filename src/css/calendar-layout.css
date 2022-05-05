@@ -32,7 +32,10 @@ main {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  direction: column;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   background-color: white;
 }
 
@@ -55,7 +58,6 @@ main {
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
-  padding: 1.0rem 1.0rem;
 }
 
 .calendar__table__weekday {
@@ -105,6 +107,7 @@ main {
 
 .day__create-event {
   padding-top: 0.4rem;
+  padding-right: 1.0rem;
 }
 
 .day__create-event:hover {
