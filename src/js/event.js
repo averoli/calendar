@@ -20,14 +20,6 @@ const createEvent = (params) => {
 
 // Date in format ISO string YYYY-MM-DDTHH:mm:ss.sssZ
 function displayDayEvents (date){
-    const tableDay = document.querySelector(`[data-date ="${date}"]`)
-    const [year, month, day] = date.split('-')
-    const eventList = JSON.parse(localStorage.getItem('eventInfo'))[year][month][day]
-    tableDay.innerHTML = ''
-    for (let i = 0; i < eventList.length; i++){
-        const event = createEvent({event: eventList[i], index: i})
-        tableDay.innerHTML += event
-    }
     try {
         const tableDay = document.querySelector(`[data-date ="${date}"]`)
         const [year, month, day] = date.split('-')
