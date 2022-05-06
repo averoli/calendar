@@ -6,8 +6,9 @@ function getEventsToday(){
 
     const today = new Date ();
     const todayArray = [today.getFullYear(), today.getMonth() + 1, today.getDay() + 1]
+
     let eventsToday = allEvents[todayArray[0]][todayArray[1]][todayArray[2]];
-    console.log(todayArray);
+
     if(eventsToday.length > 0){
         for(let i = 0; i < eventsToday.length; i++){
                let initTime  = eventsToday[i]["modal__initial-date"];

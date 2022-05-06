@@ -20,23 +20,16 @@ const createEvent = (params) => {
 
 // Date in format ISO string YYYY-MM-DDTHH:mm:ss.sssZ
 function displayDayEvents (date){
-    const tableDay = document.querySelector(`[data-date ="${date}"]`)
-    console.log(tableDay)
-        console.log(date)
-        const [year, month, day] = date.split('-')
-        const eventList = JSON.parse(localStorage.getItem('eventInfo'))[year][month][day]
-        tableDay.innerHTML = ''
-        for (let i = 0; i < eventList.length; i++){
-            tableDay.innerHTML += createEvent({event: eventList[i], index: i})
-        }
     try {
-        const tableDay = document.querySelector(`[data-date ="${date}"]`)
-        const [year, month, day] = date.split('-')
+        const tableDay = document.querySelector(`[data-date="${date}"]`)
+
+        console.log(date)
+        const [year, month, day] = date.split('-').splice(0,10).map(a => parseInt(a))
         const eventList = JSON.parse(localStorage.getItem('eventInfo'))[year][month][day]
-        tableDay.innerHTML = ''
         for (let i = 0; i < eventList.length; i++){
             console.log("se tiene que crear un elemento")
             tableDay.innerHTML += createEvent({event: eventList[i], index: i})
+
         }
     } catch (error){
         console.log("Error accessing database")

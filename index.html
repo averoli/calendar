@@ -7,14 +7,14 @@
     <script src="https://kit.fontawesome.com/6d9b3c0e02.js" crossorigin="anonymous"></script>
     <script type="module" src="./src/js/main.js"></script>
     <script type="module" src="./src/js/calendar.js"></script>
-    <!-- <script type="module" src="./src/js/timer.js"></script> -->
+    <script type="module" src="./src/js/timer.js"></script>
     <link rel="stylesheet" href="./src/css/styles.css">
     <title>Calendar</title>
 </head>
 <body>
     <main class="calendar" id="calendar">
         <header class="calendar__header">
-            <button class="button__previous"><</button>
+            <button class="button__previous" id="button__previous"><</button>
             <div>
             <h2 class="calendar__month">MAY</h2>
             <h2 class="calendar__year">2022</h2>
@@ -22,7 +22,7 @@
             <button  id="btn__create-event" type="button" class="header__create-event"> 
                 <p class="button__text">Create event</p>
                 </button>
-            <button class="button__next">></button>
+            <button class="button__next" id="button__next">></button>
         </header>
         <section class="calendar__section"  id="calendar__section">
             <div class="calendar__table" id="calendar__table">
